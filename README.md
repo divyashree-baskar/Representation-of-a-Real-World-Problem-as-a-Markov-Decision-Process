@@ -3,11 +3,8 @@
 
 ## Aim
 
-Write your aim here.
+To represent a real-world problem using a Markov Decision Process (MDP) by defining its states, actions, transition probabilities, rewards, and Python representation.
 
-Example:
-
-> To identify a real-world sequential decision-making problem and represent it formally as a Markov Decision Process by defining its states, actions, rewards, transitions, and Python representation.
 
 ---
 
@@ -15,9 +12,11 @@ Example:
 
 ### Problem Description
 
-Write your answer here.
+A student wants to reach college on time. The student can be in different situations, such as waking up, getting ready, waiting for the bus, travelling to college, or reaching college.
 
-Describe the real-world application that you selected.
+The agent decides what action to take at each stage. Rewards are given for reaching college on time, while penalties are given for delays.
+
+This problem can be represented using a Markov Decision Process.
 
 
 ---
@@ -26,38 +25,31 @@ Describe the real-world application that you selected.
 
 A Markov Decision Process is represented as:
 
-$$
-MDP = (S, A, P, R, \gamma)
-$$
+**MDP = (S, A, P, R, γ)**
 
 Where:
 
-| Symbol | Meaning |
-|---|---|
-| $S$ | Set of states |
-| $A$ | Set of actions |
-| $P$ | Transition probability function |
-| $R$ | Reward function |
-| $\gamma$ | Discount factor |
+- **S:** Set of states
+- **A:** Set of actions
+- **P:** Transition probability function
+- **R:** Reward function
+- **γ:** Discount factor
 
 ---
 
 ## State Space
 
-Write your answer here.
 
-The state space should list all possible situations in which the agent can exist.
+The state space contains five possible situations of the student.
 
-Example format:
-
-```text
 S = {
-    State 1,
-    State 2,
-    State 3,
-    ...
+
+- S1: Student is sleeping
+- S2: Student is getting ready
+- S3: Student is waiting for the bus
+- S4: Student is travelling to college
+- S5: Student has reached college
 }
-```
 
 
 
@@ -65,9 +57,9 @@ S = {
 
 ## Sample State
 
-Write your answer here.
+**S3: Student is waiting for the bus.**
 
-A sample state is one specific example from the state space.
+In this state, the student waits for the bus to travel to college.
 
 
 
@@ -75,45 +67,49 @@ A sample state is one specific example from the state space.
 
 ## Action Space
 
-Write your answer here.
+The possible actions available to the student are:
 
-The action space should list all possible actions available to the agent.
-
-Example format:
-
-```text
 A = {
-    Action 1,
-    Action 2,
-    Action 3,
-    ...
+
+- A1: Wake up
+- A2: Get ready quickly
+- A3: Wait for the bus
+- A4: Board the bus
+- A5: Reach the classroom
 }
-```
+
 
 
 ---
 
 ## Sample Action
 
-Write your answer here.
+**A2: Get ready quickly.**
 
-A sample action is one action selected from the action space.
-
+The student chooses this action to save time and avoid being late.
 
 
 ---
 
 ## Transition Probability
 
-Write your answer here.
+Transition probability describes the chance of moving from one state to another after taking an action.
 
-The transition probability explains how the environment moves from one state to another after an action is taken.
+For example:
+
+- From S1 to S2 after waking up: Probability = 1.0
+- From S2 to S3 after getting ready: Probability = 0.9
+- From S3 to S4 after boarding the bus: Probability = 0.8
+- From S4 to S5 after travelling: Probability = 0.9
+
+These probabilities are assumed for this example.
 
 General form:
 
-$$
-P(s' \mid s,a)
-$$
+**P(s′ | s, a)**
+
+It represents the probability of reaching the next state after taking an action in the current state.
+
 
 This means:
 
@@ -124,7 +120,14 @@ This means:
 
 ## Reward Function
 
-Write your answer here.
+The reward function gives feedback for each action.
+
+- Reaching college on time: +10
+- Getting ready quickly: +5
+- Waiting for the bus: -1
+- Being delayed: -5
+
+A positive reward encourages good decisions, while a negative reward discourages delays.
 
 The reward function defines the feedback received by the agent after taking an action.
 
@@ -140,16 +143,13 @@ $$
 
 ## Graphical Representation
 
-Write your answer here.
+The MDP can be represented as the following sequence:
 
-Draw the MDP graph.
+Sleeping → Getting Ready → Waiting for Bus → Travelling to College → Reached College
 
-The graph should include:
+The transitions are associated with actions, probabilities, and rewards.
 
-1. States as nodes.
-2. Actions as arrows.
-3. Rewards on transitions.
-4. Transition probabilities if applicable.
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/10a3bbb4-7982-48cc-b579-7311f085d80a" />
 
 
 ---
@@ -177,7 +177,7 @@ Write your Python output here.
 
 ## Result
 
-Write your result here.
+Thus, the real-world problem of a student travelling to college was successfully represented as a Markov Decision Process using five states, actions, transition probabilities, a reward function, and Python dictionaries.
 
 
 
