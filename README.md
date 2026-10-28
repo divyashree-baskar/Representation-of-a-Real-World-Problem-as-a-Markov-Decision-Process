@@ -163,14 +163,67 @@ Use Python dictionaries to represent the MDP.
 
 ```python
 # MDP Representation using Python
-# print("Name:       ")
-# print("Register Number:     ")
+print("Name: DIVYASHREE B")
+print("Register Number: 212224040081")
+
+states = {
+    "S1": "Sleeping",
+    "S2": "Getting ready",
+    "S3": "Waiting for bus",
+    "S4": "Travelling to college",
+    "S5": "Reached college"
+}
+
+actions = {
+    "S1": ["Wake up"],
+    "S2": ["Get ready quickly"],
+    "S3": ["Board the bus"],
+    "S4": ["Travel to college"],
+    "S5": ["Attend class"]
+}
+
+transitions = {
+    ("S1", "Wake up"): [("S2", 1.0)],
+    ("S2", "Get ready quickly"): [("S3", 0.9), ("S2", 0.1)],
+    ("S3", "Board the bus"): [("S4", 0.8), ("S3", 0.2)],
+    ("S4", "Travel to college"): [("S5", 0.9), ("S4", 0.1)],
+    ("S5", "Attend class"): [("S5", 1.0)]
+}
+
+rewards = {
+    "S1": 0,
+    "S2": 5,
+    "S3": -1,
+    "S4": 0,
+    "S5": 10
+}
+
+gamma = 0.9
+
+print("\nStates:")
+for key, value in states.items():
+    print(key, ":", value)
+
+print("\nActions:")
+for key, value in actions.items():
+    print(key, ":", value)
+
+print("\nTransition Probabilities:")
+for key, value in transitions.items():
+    print(key, "->", value)
+
+print("\nRewards:")
+for key, value in rewards.items():
+    print(key, ":", value)
+
+print("\nDiscount Factor:", gamma)
 
 ```
 ---
 ## Output
 
-Write your Python output here.
+<img width="671" height="706" alt="image" src="https://github.com/user-attachments/assets/82ce6072-4746-4fad-b264-422e98b35733" />
+
 
 
 ---
